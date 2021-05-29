@@ -80,7 +80,7 @@ r.get('/classify/:i/:r', function(req, res, next) {
             
         ]
     ).then((jres)=>{
-        res.json(jres_)
+        res.json({jres, jres_})
     })
   })
 });
