@@ -23,7 +23,6 @@ bot.onText(/\/start/, (msg) => {
 
 // input requires i and r
 bot.onText(/\/predict/, (msg) => { 
-    console.log(msg)
     bot.sendMessage(
         msg.chat.id,
         `masukan nilai i|v contohnya 9|9`
