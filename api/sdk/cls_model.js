@@ -28,7 +28,7 @@ function ArgMax(res){
 }
 
 async function classify(data){
-    let in_dim = 4; //i r v p
+    let in_dim = 4; // i r v p
     
     data = normalized(data);
     shape = [1, in_dim];
