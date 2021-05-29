@@ -48,11 +48,11 @@ bot.on('message', (msg) => {
             cls_model.classify([i, r, v, p]).then ((jres2)=>{
              bot.sendMessage(
                 msg.chat.id,
-                `nilai v yang diprediksi adalah ${v} volt `
+                `nilai v yang diprediksi adalah ${jres1[0]} volt `
             ); 
             bot.sendMessage(
                 msg.chat.id,
-                `nilai p yang diprediksi adalah ${p} watt `
+                `nilai p yang diprediksi adalah ${jres1[1]} watt `
                 
              );
              bot.sendMessage(
