@@ -20,6 +20,7 @@ bot.onText(/\/start/, (msg) => {
     );   
     state = 0;
 });
+
 // input requires i and r
 bot.onText(/\/predict/, (msg) => { 
     console.log(msg)
@@ -38,7 +39,7 @@ bot.on('message', (msg) => {
                 parseFloat(s[0]), // string to float
                 parseFloat(s[1])
             ]
-        ).then((jres)=>{
+        ).then((jres1)=>{
           console.log(jres1);
             
             cls_model.classify([parseFloat(s[0]), parseFloat(s[1]), parseFloat(jres1[0]), parseFloat(jres1[1])]).then ((jres2)=>{
