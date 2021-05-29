@@ -75,8 +75,8 @@ r.get('/classify/:i/:r', function(req, res, next) {
         [
             parseFloat(req.params.i), // string to float
             parseFloat(req.params.r)
-            parseFloat(jres[0]),
-            parseFloat(jres[1])
+            parseFloat(jres1[0]),
+            parseFloat(jres1[1])
             
         ]
     ).then((jres)=>{
