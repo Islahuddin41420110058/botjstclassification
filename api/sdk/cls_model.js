@@ -3,8 +3,8 @@ const tf = require('@tensorflow/tfjs-node');
 function normalized(data){ // i & r
     i = (data[0] - 12.585) / 6.813882
     r = (data[1] - 51.4795) / 29.151289
-    r = (data[2] - 650.4795) / 552.6351
-    r = (data[3] - 10620.56) / 12152.78
+    v = (data[2] - 650.4795) / 552.6351
+    p = (data[3] - 10620.56) / 12152.78
     return [i, r, v, p]
 }
 
