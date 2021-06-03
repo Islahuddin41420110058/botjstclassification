@@ -36,7 +36,7 @@ bot.on('message', (msg) => {
         model.predict(
             [
                 parseFloat(s[0]), // string to float
-                parseFloat(s[1]),
+                parseFloat(s[1])
             ]
         ).then((jres1)=>{
           console.log(jres1);
@@ -90,8 +90,8 @@ r.get('/classify/:i/:r', function(req, res, next) {
         [
             parseFloat(req.params.i), // string to float
             parseFloat(req.params.r),
-            parseFloat(jres1[0]),
-            parseFloat(jres1[1])
+            parseFloat(jres[0]),
+            parseFloat(jres[1])
         ]
     ).then((jres_)=>{
         res.json({jres, jres_})
