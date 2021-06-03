@@ -93,7 +93,7 @@ r.get('/classify/:i/:r', function(req, res, next) {
             parseFloat(jres1[0]),
             parseFloat(jres1[1])
         ]
-    ).then((jres)=>{
+    ).then((jres_)=>{
         res.json({jres, jres_})
     })
   })
