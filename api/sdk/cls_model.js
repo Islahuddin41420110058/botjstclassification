@@ -44,7 +44,7 @@ async function classify(data){
                 tf_data
         );
         result = predict.dataSync();
-        return ArgMax ( result );
+        return ArgMax( result );
         
     }catch(e){
       console.log(e);
