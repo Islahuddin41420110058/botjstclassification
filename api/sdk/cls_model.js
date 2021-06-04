@@ -8,27 +8,27 @@ function normalized(data){ // i & r
     return [i, r, v, p]
 }
 
-const argFact = (compareFn) => (array) => array.map((el, idx) => [el, idx]). reduce(compareFn)[1]
-const argMax = argFact((min, el) => (el[0] > min[0] ? el : min ))
+const argFact = (compare) => (array) => array.map((el, idx) => [el, idx]).reduce(compareFn)[1]
+const argMax = argFact((min, el) => (el[0] ? el:min))
 
 function ArgMax(res){
-  label = "NORMAL"
-    cls_data = []
+    label = "NORMAL" 
+    cls_data =[]
     for(i=0; i<res.length; i++){
         cls_data[i] = res[i]
     }
     console.log(cls_data, argMax(cls_data));
-    
-  if(argMax(cls_data) == 1){
-      label = "OVER VOLTAGE"
-  }if(argMax(cls_data) == 0){
-      label = "DROP VOLTAGE"
-  }
- return label
+
+    if(argMax(cls_data) == 1){
+        label = "OVER VOLTAGE"
+    }if(argMax(cls_data) == 0){
+        label = "DROP VOLTAGE"
+    }
+    return label
 }
 
 async function classify(data){
-    let in_dim = 4; // i r v p
+    let in_dim = 4; //i r v p
     
     data = normalized(data);
     shape = [1, in_dim];
@@ -37,7 +37,7 @@ async function classify(data){
 
     try{
         // path load in public access => github
-        const path = 'https://raw.githubusercontent.com/Islahuddin41420110058/botjstclassification/main/public/cls_model/model.json';
+        const path = 'https://raw.githubusercontent.com/zendi014/jst_service/main/public/ex_model/model.json';
         const model = await tf.loadGraphModel(path);
         
         predict = model.predict(
